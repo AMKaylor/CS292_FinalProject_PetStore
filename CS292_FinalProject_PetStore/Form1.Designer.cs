@@ -70,6 +70,7 @@
             this.btnPetAccessories.TabIndex = 2;
             this.btnPetAccessories.Text = "Pet Accessories";
             this.btnPetAccessories.UseVisualStyleBackColor = true;
+            this.btnPetAccessories.Click += new System.EventHandler(this.btnPetAccessories_Click);
             // 
             // btnPetFood
             // 
@@ -80,6 +81,7 @@
             this.btnPetFood.TabIndex = 3;
             this.btnPetFood.Text = "Pet Food";
             this.btnPetFood.UseVisualStyleBackColor = true;
+            this.btnPetFood.Click += new System.EventHandler(this.btnPetFood_Click);
             // 
             // btnDogsCats
             // 
@@ -90,6 +92,7 @@
             this.btnDogsCats.TabIndex = 4;
             this.btnDogsCats.Text = "Dogs && Cats";
             this.btnDogsCats.UseVisualStyleBackColor = true;
+            this.btnDogsCats.Click += new System.EventHandler(this.btnDogsCats_Click);
             // 
             // btnMarineLife
             // 
@@ -100,6 +103,7 @@
             this.btnMarineLife.TabIndex = 5;
             this.btnMarineLife.Text = "Marine Life";
             this.btnMarineLife.UseVisualStyleBackColor = true;
+            this.btnMarineLife.Click += new System.EventHandler(this.btnMarineLife_Click);
             // 
             // label3
             // 
@@ -138,6 +142,7 @@
             this.btnMenuWishlist.Name = "btnMenuWishlist";
             this.btnMenuWishlist.Size = new System.Drawing.Size(124, 22);
             this.btnMenuWishlist.Text = "Go to Wishlist";
+            this.btnMenuWishlist.Click += new System.EventHandler(this.btnMenuWishlist_Click);
             // 
             // frmPetInc
             // 
