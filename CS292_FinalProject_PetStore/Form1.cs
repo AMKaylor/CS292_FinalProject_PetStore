@@ -13,10 +13,10 @@ namespace CS292_FinalProject_PetStore
     public partial class frmPetInc : Form
     {
 
-        bool petAccessoriesButtonClicked = false;
-        bool petFoodButtonClicked = false;
-        bool dogsCatsButtonClicked = false;
-        bool marineLifeButtonClicked = false;
+        Boolean petAccessoriesButtonClicked = false;
+        Boolean petFoodButtonClicked = false;
+        Boolean dogsCatsButtonClicked = false;
+        Boolean marineLifeButtonClicked = false;
 
         public frmPetInc()
         {
@@ -37,45 +37,48 @@ namespace CS292_FinalProject_PetStore
 
         private void btnPetAccessories_Click(object sender, EventArgs e)
         {
-            showDBForm();
+            
             petAccessoriesButtonClicked = true;
             petFoodButtonClicked = false;
             dogsCatsButtonClicked = false;
             marineLifeButtonClicked = false;
-
+            showDBForm();
         }
 
         private void btnPetFood_Click(object sender, EventArgs e)
         {
-            showDBForm();
+           
             petAccessoriesButtonClicked = false;
             petFoodButtonClicked = true;
             dogsCatsButtonClicked = false;
             marineLifeButtonClicked = false;
+            showDBForm();
         }
 
         private void btnDogsCats_Click(object sender, EventArgs e)
         {
-            showDBForm();
+           
             petAccessoriesButtonClicked = false;
             petFoodButtonClicked = false;
             dogsCatsButtonClicked = true;
             marineLifeButtonClicked = false;
+            showDBForm();
         }
 
         private void btnMarineLife_Click(object sender, EventArgs e)
         {
-            showDBForm();
+           
             petAccessoriesButtonClicked = false;
             petFoodButtonClicked = false;
             dogsCatsButtonClicked = false;
             marineLifeButtonClicked = true;
+            showDBForm();
         }
 
         //opens the form to show the database view
         private void showDBForm()
         {
-            var db = new databaseForm();
+            var db = new databaseForm(this);
             db.Show();
         }
 
@@ -86,13 +89,22 @@ namespace CS292_FinalProject_PetStore
             ws.Show();
         }
 
-        public bool getPAButtonClicked()
+        public Boolean getPAButtonClicked()
         {
             return petAccessoriesButtonClicked;
         }
-        public bool getPFButtonClicked()
+        public Boolean getPFButtonClicked()
         {
             return petFoodButtonClicked;
         }
+        public Boolean getDogsCatsButtonClicked()
+        {
+            return dogsCatsButtonClicked;
+        }
+        public Boolean getMarineLifeButtonClicked()
+        {
+            return marineLifeButtonClicked;
+        }
+
     }
 }

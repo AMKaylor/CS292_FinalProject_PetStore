@@ -16,5 +16,10 @@ namespace CS292_FinalProject_PetStore
         {
             InitializeComponent();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }
