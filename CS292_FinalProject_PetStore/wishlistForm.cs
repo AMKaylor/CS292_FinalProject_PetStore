@@ -21,5 +21,12 @@ namespace CS292_FinalProject_PetStore
         {
             Hide();
         }
-    }
+
+		private void wishlistForm_Load(object sender, EventArgs e)
+		{
+			// TODO: This line of code loads data into the 'petInfoDataSet2.WishList' table. You can move, or remove it, as needed.
+			this.wishListTableAdapter.Fill(this.petInfoDataSet2.WishList);
+
+		}
+	}
 }

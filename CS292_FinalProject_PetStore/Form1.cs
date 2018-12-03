@@ -12,11 +12,11 @@ namespace CS292_FinalProject_PetStore
 {
     public partial class frmPetInc : Form
     {
-
-        Boolean petAccessoriesButtonClicked = false;
-        Boolean petFoodButtonClicked = false;
-        Boolean dogsCatsButtonClicked = false;
-        Boolean marineLifeButtonClicked = false;
+		//Boolean Properties are false by default, the stuff in brackets is shorthand for getters and setters for each Property
+		public Boolean PetAccessoriesButtonClicked { get; set; }
+		public Boolean PetFoodButtonClicked { get; set; }
+        public Boolean DogsCatsButtonClicked { get; set; }
+        public Boolean MarineLifeButtonClicked { get; set; }
 
         public frmPetInc()
         {
@@ -32,46 +32,41 @@ namespace CS292_FinalProject_PetStore
         private void btnMenuWishlist_Click(object sender, EventArgs e)
         {
             showWishlistForm();
-
         }
 
         private void btnPetAccessories_Click(object sender, EventArgs e)
         {
-            
-            petAccessoriesButtonClicked = true;
-            petFoodButtonClicked = false;
-            dogsCatsButtonClicked = false;
-            marineLifeButtonClicked = false;
+            PetAccessoriesButtonClicked = true;
+            PetFoodButtonClicked = false;
+            DogsCatsButtonClicked = false;
+            MarineLifeButtonClicked = false;
             showDBForm();
         }
 
         private void btnPetFood_Click(object sender, EventArgs e)
         {
-           
-            petAccessoriesButtonClicked = false;
-            petFoodButtonClicked = true;
-            dogsCatsButtonClicked = false;
-            marineLifeButtonClicked = false;
+            PetAccessoriesButtonClicked = false;
+            PetFoodButtonClicked = true;
+            DogsCatsButtonClicked = false;
+            MarineLifeButtonClicked = false;
             showDBForm();
         }
 
         private void btnDogsCats_Click(object sender, EventArgs e)
         {
-           
-            petAccessoriesButtonClicked = false;
-            petFoodButtonClicked = false;
-            dogsCatsButtonClicked = true;
-            marineLifeButtonClicked = false;
+            PetAccessoriesButtonClicked = false;
+            PetFoodButtonClicked = false;
+            DogsCatsButtonClicked = true;
+            MarineLifeButtonClicked = false;
             showDBForm();
         }
 
         private void btnMarineLife_Click(object sender, EventArgs e)
         {
-           
-            petAccessoriesButtonClicked = false;
-            petFoodButtonClicked = false;
-            dogsCatsButtonClicked = false;
-            marineLifeButtonClicked = true;
+            PetAccessoriesButtonClicked = false;
+            PetFoodButtonClicked = false;
+            DogsCatsButtonClicked = false;
+            MarineLifeButtonClicked = true;
             showDBForm();
         }
 
@@ -89,22 +84,22 @@ namespace CS292_FinalProject_PetStore
             ws.Show();
         }
 
-        public Boolean getPAButtonClicked()
-        {
-            return petAccessoriesButtonClicked;
-        }
-        public Boolean getPFButtonClicked()
-        {
-            return petFoodButtonClicked;
-        }
-        public Boolean getDogsCatsButtonClicked()
-        {
-            return dogsCatsButtonClicked;
-        }
-        public Boolean getMarineLifeButtonClicked()
-        {
-            return marineLifeButtonClicked;
-        }
+        //public Boolean getPAButtonClicked()
+        //{
+        //    return PetAccessoriesButtonClicked;
+        //}
+        //public Boolean getPFButtonClicked()
+        //{
+        //    return PetFoodButtonClicked;
+        //}
+        //public Boolean getDogsCatsButtonClicked()
+        //{
+        //    return DogsCatsButtonClicked;
+        //}
+        //public Boolean getMarineLifeButtonClicked()
+        //{
+        //    return MarineLifeButtonClicked;
+        //}
 
     }
 }
