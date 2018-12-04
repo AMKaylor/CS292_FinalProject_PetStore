@@ -17,7 +17,7 @@ namespace CS292_FinalProject_PetStore
         {
             _frmPetInc = frmPetInc;
             InitializeComponent();
-            chooseFilters();
+            PopulateFilterDropdown();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,96 +39,56 @@ namespace CS292_FinalProject_PetStore
         }
 
         //checks to see which button was clicked on the previous form, and sets visible filters and data accordingly
-        private void chooseFilters()
+        private void PopulateFilterDropdown()
         {
-            if (_frmPetInc.PetAccessoriesButtonClicked)//_frmPetInc.getPAButtonClicked())
-            {
-                //petAccRdioBtn1.Visible = true;
-                //petAccRdioBtn2.Visible = true;
-                //petAccRdioBtn3.Visible = true;
-                //petFoodRdioBtn1.Visible = false;
-                //petFoodRdioBtn2.Visible = false;
-                //petFoodRdioBtn3.Visible = false;
-                //dogsCatsRdioBtn1.Visible = false;
-                //dogsCatsRdioBtn2.Visible = false;
-                //dogsCatsRdioBtn3.Visible = false;
-                //marineRdioBtn1.Visible = false;
-                //marineRdioBtn2.Visible = false;
-                //marineRdioBtn3.Visible = false;
-                 
-                petAccPanel.Visible = true;
-				petFoodPanel.Visible = false;
-				dogsCatsPanel.Visible = false;
-				marinePanel.Visible = false;
-
+			foreach(DataColumn el in petInfoDataSet1.Tables[0].Columns)
+			{
+				filterComboBox.Items.Add(el.ColumnName);
 			}
-            else if (_frmPetInc.PetFoodButtonClicked)//_frmPetInc.getPFButtonClicked())
-            {
-                //petAccRdioBtn1.Visible = false;
-                //petAccRdioBtn2.Visible = false;
-                //petAccRdioBtn3.Visible = false;
-                //petFoodRdioBtn1.Visible = true;
-                //petFoodRdioBtn2.Visible = true;
-                //petFoodRdioBtn3.Visible = true;
-                //dogsCatsRdioBtn1.Visible = false;
-                //dogsCatsRdioBtn2.Visible = false;
-                //dogsCatsRdioBtn3.Visible = false;
-                //marineRdioBtn1.Visible = false;
-                //marineRdioBtn2.Visible = false;
-                //marineRdioBtn3.Visible = false;
-                
-                petAccPanel.Visible = false;
-                petFoodPanel.Visible = true;
-				dogsCatsPanel.Visible = false;
-				marinePanel.Visible = false;
 
-			}
-            else if (_frmPetInc.DogsCatsButtonClicked)//_frmPetInc.getDogsCatsButtonClicked())
-            {
-                //petAccRdioBtn1.Visible = false;
-                //petAccRdioBtn2.Visible = false;
-                //petAccRdioBtn3.Visible = false;
-                //petFoodRdioBtn1.Visible = false;
-                //petFoodRdioBtn2.Visible = false;
-                //petFoodRdioBtn3.Visible = false;
-                //dogsCatsRdioBtn1.Visible = true;
-                //dogsCatsRdioBtn2.Visible = true;
-                //dogsCatsRdioBtn3.Visible = true;
-                //marineRdioBtn1.Visible = false;
-                //marineRdioBtn2.Visible = false;
-                //marineRdioBtn3.Visible = false;
-                
-                petAccPanel.Visible = false;
-                petFoodPanel.Visible = false;
-                dogsCatsPanel.Visible = true;
-                marinePanel.Visible = false;
-            }
-            else
-            {
-                //petAccRdioBtn1.Visible = false;
-                //petAccRdioBtn2.Visible = false;
-                //petAccRdioBtn3.Visible = false;
-                //petFoodRdioBtn1.Visible = false;
-                //petFoodRdioBtn2.Visible = false;
-                //petFoodRdioBtn3.Visible = false;
-                //dogsCatsRdioBtn1.Visible = false;
-                //dogsCatsRdioBtn2.Visible = false;
-                //dogsCatsRdioBtn3.Visible = false;
-                //marineRdioBtn1.Visible = true;
-                //marineRdioBtn2.Visible = true;
-                //marineRdioBtn3.Visible = true;
-                
-				petAccPanel.Visible = false;
-                petFoodPanel.Visible = false;
-                dogsCatsPanel.Visible = false;
-                marinePanel.Visible = true;
-            }
+			//blacklist Id
+			filterComboBox.Items.Remove("Id");
+
+			//set a default value to prevent users from trying to sort by nothing.
+			filterComboBox.SelectedIndex = 0;
         }
 
 		private void databaseForm_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'petInfoDataSet1.StoreItems' table. You can move, or remove it, as needed.
 			this.storeItemsTableAdapter.Fill(this.petInfoDataSet1.StoreItems);
+		}
+
+		private DataGridViewColumn GetDataColumn(String name)
+		{
+			foreach(DataGridViewColumn el in dataGridView1.Columns)
+			{
+				if (el.Name.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0)
+				{
+					return el;
+				}
+			}
+
+			return null;
+		}
+
+		private void filterRadioBtn_CheckedChanged(object sender, EventArgs e)
+		{
+			String selectedColumn = filterComboBox.SelectedItem.ToString();
+			try
+			{
+				if (ascRadioBtn.Checked)
+				{
+					dataGridView1.Sort(GetDataColumn(selectedColumn), ListSortDirection.Ascending);
+				}
+				else
+				{
+					dataGridView1.Sort(GetDataColumn(selectedColumn), ListSortDirection.Descending);
+				}
+			}catch(Exception ex)
+			{
+				throw ex;
+			}
 		}
 	}
 }

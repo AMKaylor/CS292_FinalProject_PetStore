@@ -29,47 +29,32 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.goToWishlistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.fliterLbl = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.storeItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.petInfoDataSet1 = new CS292_FinalProject_PetStore.PetInfoDataSet1();
-			this.petInfoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.petInfoDataSet = new CS292_FinalProject_PetStore.PetInfoDataSet();
-			this.petAccRdioBtn1 = new System.Windows.Forms.RadioButton();
-			this.petAccRdioBtn2 = new System.Windows.Forms.RadioButton();
-			this.petAccRdioBtn3 = new System.Windows.Forms.RadioButton();
-			this.petFoodRdioBtn1 = new System.Windows.Forms.RadioButton();
-			this.petFoodRdioBtn2 = new System.Windows.Forms.RadioButton();
-			this.petFoodRdioBtn3 = new System.Windows.Forms.RadioButton();
-			this.dogsCatsRdioBtn1 = new System.Windows.Forms.RadioButton();
-			this.dogsCatsRdioBtn2 = new System.Windows.Forms.RadioButton();
-			this.dogsCatsRdioBtn3 = new System.Windows.Forms.RadioButton();
-			this.marineRdioBtn2 = new System.Windows.Forms.RadioButton();
-			this.marineRdioBtn1 = new System.Windows.Forms.RadioButton();
-			this.marineRdioBtn3 = new System.Windows.Forms.RadioButton();
-			this.addToWSBtn = new System.Windows.Forms.Button();
-			this.marinePanel = new System.Windows.Forms.Panel();
-			this.dogsCatsPanel = new System.Windows.Forms.Panel();
-			this.petAccPanel = new System.Windows.Forms.Panel();
-			this.petFoodPanel = new System.Windows.Forms.Panel();
-			this.storeItemsTableAdapter = new CS292_FinalProject_PetStore.PetInfoDataSet1TableAdapters.StoreItemsTableAdapter();
 			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.productTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.descriptorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.storeItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.petInfoDataSet1 = new CS292_FinalProject_PetStore.PetInfoDataSet1();
+			this.petInfoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.petInfoDataSet = new CS292_FinalProject_PetStore.PetInfoDataSet();
+			this.addToWSBtn = new System.Windows.Forms.Button();
+			this.storeItemsTableAdapter = new CS292_FinalProject_PetStore.PetInfoDataSet1TableAdapters.StoreItemsTableAdapter();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.descRadioBtn = new System.Windows.Forms.RadioButton();
+			this.ascRadioBtn = new System.Windows.Forms.RadioButton();
+			this.filterComboBox = new System.Windows.Forms.ComboBox();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.storeItemsBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.petInfoDataSet1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.petInfoDataSetBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.petInfoDataSet)).BeginInit();
-			this.marinePanel.SuspendLayout();
-			this.dogsCatsPanel.SuspendLayout();
-			this.petAccPanel.SuspendLayout();
-			this.petFoodPanel.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -99,16 +84,6 @@
 			this.goToWishlistToolStripMenuItem.Text = "Go to Wishlist";
 			this.goToWishlistToolStripMenuItem.Click += new System.EventHandler(this.goToWishlistToolStripMenuItem_Click);
 			// 
-			// fliterLbl
-			// 
-			this.fliterLbl.AutoSize = true;
-			this.fliterLbl.Font = new System.Drawing.Font("Poor Richard", 21F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.fliterLbl.Location = new System.Drawing.Point(27, 43);
-			this.fliterLbl.Name = "fliterLbl";
-			this.fliterLbl.Size = new System.Drawing.Size(114, 31);
-			this.fliterLbl.TabIndex = 4;
-			this.fliterLbl.Text = "Filter By: ";
-			// 
 			// dataGridView1
 			// 
 			this.dataGridView1.AutoGenerateColumns = false;
@@ -125,6 +100,33 @@
 			this.dataGridView1.RowHeadersWidth = 30;
 			this.dataGridView1.Size = new System.Drawing.Size(433, 222);
 			this.dataGridView1.TabIndex = 5;
+			// 
+			// productNameDataGridViewTextBoxColumn
+			// 
+			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+			this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+			// 
+			// productTypeDataGridViewTextBoxColumn
+			// 
+			this.productTypeDataGridViewTextBoxColumn.DataPropertyName = "ProductType";
+			this.productTypeDataGridViewTextBoxColumn.HeaderText = "ProductType";
+			this.productTypeDataGridViewTextBoxColumn.Name = "productTypeDataGridViewTextBoxColumn";
+			// 
+			// priceDataGridViewTextBoxColumn
+			// 
+			this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+			dataGridViewCellStyle3.Format = "C2";
+			dataGridViewCellStyle3.NullValue = null;
+			this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+			this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+			this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+			// 
+			// descriptorDataGridViewTextBoxColumn
+			// 
+			this.descriptorDataGridViewTextBoxColumn.DataPropertyName = "Descriptor";
+			this.descriptorDataGridViewTextBoxColumn.HeaderText = "Descriptor";
+			this.descriptorDataGridViewTextBoxColumn.Name = "descriptorDataGridViewTextBoxColumn";
 			// 
 			// storeItemsBindingSource
 			// 
@@ -146,150 +148,6 @@
 			this.petInfoDataSet.DataSetName = "PetInfoDataSet";
 			this.petInfoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
-			// petAccRdioBtn1
-			// 
-			this.petAccRdioBtn1.AutoSize = true;
-			this.petAccRdioBtn1.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.petAccRdioBtn1.Location = new System.Drawing.Point(18, 15);
-			this.petAccRdioBtn1.Name = "petAccRdioBtn1";
-			this.petAccRdioBtn1.Size = new System.Drawing.Size(168, 25);
-			this.petAccRdioBtn1.TabIndex = 6;
-			this.petAccRdioBtn1.TabStop = true;
-			this.petAccRdioBtn1.Text = "petAccRdioBtn1";
-			this.petAccRdioBtn1.UseVisualStyleBackColor = true;
-			// 
-			// petAccRdioBtn2
-			// 
-			this.petAccRdioBtn2.AutoSize = true;
-			this.petAccRdioBtn2.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.petAccRdioBtn2.Location = new System.Drawing.Point(18, 46);
-			this.petAccRdioBtn2.Name = "petAccRdioBtn2";
-			this.petAccRdioBtn2.Size = new System.Drawing.Size(168, 25);
-			this.petAccRdioBtn2.TabIndex = 7;
-			this.petAccRdioBtn2.TabStop = true;
-			this.petAccRdioBtn2.Text = "petAccRdioBtn2";
-			this.petAccRdioBtn2.UseVisualStyleBackColor = true;
-			// 
-			// petAccRdioBtn3
-			// 
-			this.petAccRdioBtn3.AutoSize = true;
-			this.petAccRdioBtn3.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.petAccRdioBtn3.Location = new System.Drawing.Point(18, 77);
-			this.petAccRdioBtn3.Name = "petAccRdioBtn3";
-			this.petAccRdioBtn3.Size = new System.Drawing.Size(168, 25);
-			this.petAccRdioBtn3.TabIndex = 8;
-			this.petAccRdioBtn3.TabStop = true;
-			this.petAccRdioBtn3.Text = "petAccRdioBtn3";
-			this.petAccRdioBtn3.UseVisualStyleBackColor = true;
-			// 
-			// petFoodRdioBtn1
-			// 
-			this.petFoodRdioBtn1.AutoSize = true;
-			this.petFoodRdioBtn1.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.petFoodRdioBtn1.Location = new System.Drawing.Point(18, 15);
-			this.petFoodRdioBtn1.Name = "petFoodRdioBtn1";
-			this.petFoodRdioBtn1.Size = new System.Drawing.Size(179, 25);
-			this.petFoodRdioBtn1.TabIndex = 9;
-			this.petFoodRdioBtn1.TabStop = true;
-			this.petFoodRdioBtn1.Text = "petFoodRdioBtn1";
-			this.petFoodRdioBtn1.UseVisualStyleBackColor = true;
-			// 
-			// petFoodRdioBtn2
-			// 
-			this.petFoodRdioBtn2.AutoSize = true;
-			this.petFoodRdioBtn2.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.petFoodRdioBtn2.Location = new System.Drawing.Point(18, 44);
-			this.petFoodRdioBtn2.Name = "petFoodRdioBtn2";
-			this.petFoodRdioBtn2.Size = new System.Drawing.Size(179, 25);
-			this.petFoodRdioBtn2.TabIndex = 10;
-			this.petFoodRdioBtn2.TabStop = true;
-			this.petFoodRdioBtn2.Text = "petFoodRdioBtn2";
-			this.petFoodRdioBtn2.UseVisualStyleBackColor = true;
-			// 
-			// petFoodRdioBtn3
-			// 
-			this.petFoodRdioBtn3.AutoSize = true;
-			this.petFoodRdioBtn3.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.petFoodRdioBtn3.Location = new System.Drawing.Point(18, 75);
-			this.petFoodRdioBtn3.Name = "petFoodRdioBtn3";
-			this.petFoodRdioBtn3.Size = new System.Drawing.Size(179, 25);
-			this.petFoodRdioBtn3.TabIndex = 11;
-			this.petFoodRdioBtn3.TabStop = true;
-			this.petFoodRdioBtn3.Text = "petFoodRdioBtn3";
-			this.petFoodRdioBtn3.UseVisualStyleBackColor = true;
-			// 
-			// dogsCatsRdioBtn1
-			// 
-			this.dogsCatsRdioBtn1.AutoSize = true;
-			this.dogsCatsRdioBtn1.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dogsCatsRdioBtn1.Location = new System.Drawing.Point(18, 15);
-			this.dogsCatsRdioBtn1.Name = "dogsCatsRdioBtn1";
-			this.dogsCatsRdioBtn1.Size = new System.Drawing.Size(189, 25);
-			this.dogsCatsRdioBtn1.TabIndex = 12;
-			this.dogsCatsRdioBtn1.TabStop = true;
-			this.dogsCatsRdioBtn1.Text = "dogsCatsRdioBtn1";
-			this.dogsCatsRdioBtn1.UseVisualStyleBackColor = true;
-			// 
-			// dogsCatsRdioBtn2
-			// 
-			this.dogsCatsRdioBtn2.AutoSize = true;
-			this.dogsCatsRdioBtn2.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dogsCatsRdioBtn2.Location = new System.Drawing.Point(18, 46);
-			this.dogsCatsRdioBtn2.Name = "dogsCatsRdioBtn2";
-			this.dogsCatsRdioBtn2.Size = new System.Drawing.Size(189, 25);
-			this.dogsCatsRdioBtn2.TabIndex = 13;
-			this.dogsCatsRdioBtn2.TabStop = true;
-			this.dogsCatsRdioBtn2.Text = "dogsCatsRdioBtn2";
-			this.dogsCatsRdioBtn2.UseVisualStyleBackColor = true;
-			// 
-			// dogsCatsRdioBtn3
-			// 
-			this.dogsCatsRdioBtn3.AutoSize = true;
-			this.dogsCatsRdioBtn3.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dogsCatsRdioBtn3.Location = new System.Drawing.Point(18, 77);
-			this.dogsCatsRdioBtn3.Name = "dogsCatsRdioBtn3";
-			this.dogsCatsRdioBtn3.Size = new System.Drawing.Size(189, 25);
-			this.dogsCatsRdioBtn3.TabIndex = 14;
-			this.dogsCatsRdioBtn3.TabStop = true;
-			this.dogsCatsRdioBtn3.Text = "dogsCatsRdioBtn3";
-			this.dogsCatsRdioBtn3.UseVisualStyleBackColor = true;
-			// 
-			// marineRdioBtn2
-			// 
-			this.marineRdioBtn2.AutoSize = true;
-			this.marineRdioBtn2.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.marineRdioBtn2.Location = new System.Drawing.Point(18, 46);
-			this.marineRdioBtn2.Name = "marineRdioBtn2";
-			this.marineRdioBtn2.Size = new System.Drawing.Size(168, 25);
-			this.marineRdioBtn2.TabIndex = 15;
-			this.marineRdioBtn2.TabStop = true;
-			this.marineRdioBtn2.Text = "marineRdioBtn2";
-			this.marineRdioBtn2.UseVisualStyleBackColor = true;
-			// 
-			// marineRdioBtn1
-			// 
-			this.marineRdioBtn1.AutoSize = true;
-			this.marineRdioBtn1.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.marineRdioBtn1.Location = new System.Drawing.Point(18, 15);
-			this.marineRdioBtn1.Name = "marineRdioBtn1";
-			this.marineRdioBtn1.Size = new System.Drawing.Size(168, 25);
-			this.marineRdioBtn1.TabIndex = 16;
-			this.marineRdioBtn1.TabStop = true;
-			this.marineRdioBtn1.Text = "marineRdioBtn1";
-			this.marineRdioBtn1.UseVisualStyleBackColor = true;
-			// 
-			// marineRdioBtn3
-			// 
-			this.marineRdioBtn3.AutoSize = true;
-			this.marineRdioBtn3.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.marineRdioBtn3.Location = new System.Drawing.Point(18, 77);
-			this.marineRdioBtn3.Name = "marineRdioBtn3";
-			this.marineRdioBtn3.Size = new System.Drawing.Size(168, 25);
-			this.marineRdioBtn3.TabIndex = 17;
-			this.marineRdioBtn3.TabStop = true;
-			this.marineRdioBtn3.Text = "marineRdioBtn3";
-			this.marineRdioBtn3.UseVisualStyleBackColor = true;
-			// 
 			// addToWSBtn
 			// 
 			this.addToWSBtn.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,83 +158,60 @@
 			this.addToWSBtn.Text = "Add to Wishlist";
 			this.addToWSBtn.UseVisualStyleBackColor = true;
 			// 
-			// marinePanel
-			// 
-			this.marinePanel.BackColor = System.Drawing.Color.Transparent;
-			this.marinePanel.Controls.Add(this.marineRdioBtn1);
-			this.marinePanel.Controls.Add(this.marineRdioBtn2);
-			this.marinePanel.Controls.Add(this.marineRdioBtn3);
-			this.marinePanel.Location = new System.Drawing.Point(12, 77);
-			this.marinePanel.Name = "marinePanel";
-			this.marinePanel.Size = new System.Drawing.Size(244, 107);
-			this.marinePanel.TabIndex = 19;
-			this.marinePanel.Visible = false;
-			// 
-			// dogsCatsPanel
-			// 
-			this.dogsCatsPanel.BackColor = System.Drawing.Color.Transparent;
-			this.dogsCatsPanel.Controls.Add(this.dogsCatsRdioBtn1);
-			this.dogsCatsPanel.Controls.Add(this.petAccPanel);
-			this.dogsCatsPanel.Controls.Add(this.dogsCatsRdioBtn2);
-			this.dogsCatsPanel.Controls.Add(this.dogsCatsRdioBtn3);
-			this.dogsCatsPanel.Location = new System.Drawing.Point(0, 1);
-			this.dogsCatsPanel.Name = "dogsCatsPanel";
-			this.dogsCatsPanel.Size = new System.Drawing.Size(244, 110);
-			this.dogsCatsPanel.TabIndex = 18;
-			this.dogsCatsPanel.Visible = false;
-			// 
-			// petAccPanel
-			// 
-			this.petAccPanel.BackColor = System.Drawing.Color.Transparent;
-			this.petAccPanel.Controls.Add(this.petAccRdioBtn1);
-			this.petAccPanel.Controls.Add(this.petAccRdioBtn2);
-			this.petAccPanel.Controls.Add(this.petAccRdioBtn3);
-			this.petAccPanel.Location = new System.Drawing.Point(0, 0);
-			this.petAccPanel.Name = "petAccPanel";
-			this.petAccPanel.Size = new System.Drawing.Size(244, 107);
-			this.petAccPanel.TabIndex = 20;
-			this.petAccPanel.Visible = false;
-			// 
-			// petFoodPanel
-			// 
-			this.petFoodPanel.BackColor = System.Drawing.Color.Transparent;
-			this.petFoodPanel.Controls.Add(this.petFoodRdioBtn1);
-			this.petFoodPanel.Controls.Add(this.dogsCatsPanel);
-			this.petFoodPanel.Controls.Add(this.petFoodRdioBtn2);
-			this.petFoodPanel.Controls.Add(this.petFoodRdioBtn3);
-			this.petFoodPanel.Location = new System.Drawing.Point(12, 76);
-			this.petFoodPanel.Name = "petFoodPanel";
-			this.petFoodPanel.Size = new System.Drawing.Size(244, 110);
-			this.petFoodPanel.TabIndex = 20;
-			this.petFoodPanel.Visible = false;
-			// 
 			// storeItemsTableAdapter
 			// 
 			this.storeItemsTableAdapter.ClearBeforeFill = true;
 			// 
-			// productNameDataGridViewTextBoxColumn
+			// groupBox1
 			// 
-			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-			this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
-			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+			this.groupBox1.Controls.Add(this.descRadioBtn);
+			this.groupBox1.Controls.Add(this.ascRadioBtn);
+			this.groupBox1.Controls.Add(this.filterComboBox);
+			this.groupBox1.Font = new System.Drawing.Font("Poor Richard", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox1.Location = new System.Drawing.Point(12, 43);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(226, 179);
+			this.groupBox1.TabIndex = 20;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Arrange By";
 			// 
-			// productTypeDataGridViewTextBoxColumn
+			// descRadioBtn
 			// 
-			this.productTypeDataGridViewTextBoxColumn.DataPropertyName = "ProductType";
-			this.productTypeDataGridViewTextBoxColumn.HeaderText = "ProductType";
-			this.productTypeDataGridViewTextBoxColumn.Name = "productTypeDataGridViewTextBoxColumn";
+			this.descRadioBtn.AutoSize = true;
+			this.descRadioBtn.BackColor = System.Drawing.Color.Transparent;
+			this.descRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.descRadioBtn.Location = new System.Drawing.Point(21, 103);
+			this.descRadioBtn.Name = "descRadioBtn";
+			this.descRadioBtn.Size = new System.Drawing.Size(82, 17);
+			this.descRadioBtn.TabIndex = 22;
+			this.descRadioBtn.TabStop = true;
+			this.descRadioBtn.Text = "Descending";
+			this.descRadioBtn.UseVisualStyleBackColor = false;
+			this.descRadioBtn.CheckedChanged += new System.EventHandler(this.filterRadioBtn_CheckedChanged);
 			// 
-			// priceDataGridViewTextBoxColumn
+			// ascRadioBtn
 			// 
-			this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-			this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-			this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+			this.ascRadioBtn.AutoSize = true;
+			this.ascRadioBtn.BackColor = System.Drawing.Color.Transparent;
+			this.ascRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ascRadioBtn.Location = new System.Drawing.Point(21, 80);
+			this.ascRadioBtn.Name = "ascRadioBtn";
+			this.ascRadioBtn.Size = new System.Drawing.Size(75, 17);
+			this.ascRadioBtn.TabIndex = 21;
+			this.ascRadioBtn.TabStop = true;
+			this.ascRadioBtn.Text = "Ascending";
+			this.ascRadioBtn.UseVisualStyleBackColor = false;
+			this.ascRadioBtn.CheckedChanged += new System.EventHandler(this.filterRadioBtn_CheckedChanged);
 			// 
-			// descriptorDataGridViewTextBoxColumn
+			// filterComboBox
 			// 
-			this.descriptorDataGridViewTextBoxColumn.DataPropertyName = "Descriptor";
-			this.descriptorDataGridViewTextBoxColumn.HeaderText = "Descriptor";
-			this.descriptorDataGridViewTextBoxColumn.Name = "descriptorDataGridViewTextBoxColumn";
+			this.filterComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.filterComboBox.FormattingEnabled = true;
+			this.filterComboBox.Location = new System.Drawing.Point(21, 38);
+			this.filterComboBox.Name = "filterComboBox";
+			this.filterComboBox.Size = new System.Drawing.Size(121, 21);
+			this.filterComboBox.TabIndex = 20;
+			this.filterComboBox.SelectedIndexChanged += new System.EventHandler(this.filterRadioBtn_CheckedChanged);
 			// 
 			// databaseForm
 			// 
@@ -384,11 +219,9 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.ClientSize = new System.Drawing.Size(703, 299);
-			this.Controls.Add(this.petFoodPanel);
-			this.Controls.Add(this.marinePanel);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.addToWSBtn);
 			this.Controls.Add(this.dataGridView1);
-			this.Controls.Add(this.fliterLbl);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "databaseForm";
@@ -401,14 +234,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.petInfoDataSet1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.petInfoDataSetBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.petInfoDataSet)).EndInit();
-			this.marinePanel.ResumeLayout(false);
-			this.marinePanel.PerformLayout();
-			this.dogsCatsPanel.ResumeLayout(false);
-			this.dogsCatsPanel.PerformLayout();
-			this.petAccPanel.ResumeLayout(false);
-			this.petAccPanel.PerformLayout();
-			this.petFoodPanel.ResumeLayout(false);
-			this.petFoodPanel.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -419,27 +246,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem goToWishlistToolStripMenuItem;
-        private System.Windows.Forms.Label fliterLbl;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource petInfoDataSetBindingSource;
         private PetInfoDataSet petInfoDataSet;
-        private System.Windows.Forms.RadioButton petAccRdioBtn1;
-        private System.Windows.Forms.RadioButton petAccRdioBtn2;
-        private System.Windows.Forms.RadioButton petAccRdioBtn3;
-        private System.Windows.Forms.RadioButton petFoodRdioBtn1;
-        private System.Windows.Forms.RadioButton petFoodRdioBtn2;
-        private System.Windows.Forms.RadioButton petFoodRdioBtn3;
-        private System.Windows.Forms.RadioButton dogsCatsRdioBtn1;
-        private System.Windows.Forms.RadioButton dogsCatsRdioBtn2;
-        private System.Windows.Forms.RadioButton dogsCatsRdioBtn3;
-        private System.Windows.Forms.RadioButton marineRdioBtn2;
-        private System.Windows.Forms.RadioButton marineRdioBtn1;
-        private System.Windows.Forms.RadioButton marineRdioBtn3;
         private System.Windows.Forms.Button addToWSBtn;
-        private System.Windows.Forms.Panel marinePanel;
-        private System.Windows.Forms.Panel dogsCatsPanel;
-        private System.Windows.Forms.Panel petFoodPanel;
-        private System.Windows.Forms.Panel petAccPanel;
 		private PetInfoDataSet1 petInfoDataSet1;
 		private System.Windows.Forms.BindingSource storeItemsBindingSource;
 		private PetInfoDataSet1TableAdapters.StoreItemsTableAdapter storeItemsTableAdapter;
@@ -447,5 +257,9 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn productTypeDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn descriptorDataGridViewTextBoxColumn;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.RadioButton descRadioBtn;
+		private System.Windows.Forms.RadioButton ascRadioBtn;
+		private System.Windows.Forms.ComboBox filterComboBox;
 	}
 }
