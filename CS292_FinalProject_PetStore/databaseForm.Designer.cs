@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.goToWishlistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,9 +116,9 @@
 			// priceDataGridViewTextBoxColumn
 			// 
 			this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-			dataGridViewCellStyle3.Format = "C2";
-			dataGridViewCellStyle3.NullValue = null;
-			this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle2.Format = "C2";
+			dataGridViewCellStyle2.NullValue = null;
+			this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
 			this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
 			this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
 			// 
@@ -188,6 +188,7 @@
 			this.descRadioBtn.Text = "Descending";
 			this.descRadioBtn.UseVisualStyleBackColor = false;
 			this.descRadioBtn.CheckedChanged += new System.EventHandler(this.filterRadioBtn_CheckedChanged);
+			this.descRadioBtn.Click += new System.EventHandler(this.filterRadioBtn_CheckedChanged);
 			// 
 			// ascRadioBtn
 			// 
@@ -202,6 +203,7 @@
 			this.ascRadioBtn.Text = "Ascending";
 			this.ascRadioBtn.UseVisualStyleBackColor = false;
 			this.ascRadioBtn.CheckedChanged += new System.EventHandler(this.filterRadioBtn_CheckedChanged);
+			this.ascRadioBtn.Click += new System.EventHandler(this.filterRadioBtn_CheckedChanged);
 			// 
 			// filterComboBox
 			// 
@@ -211,7 +213,6 @@
 			this.filterComboBox.Name = "filterComboBox";
 			this.filterComboBox.Size = new System.Drawing.Size(121, 21);
 			this.filterComboBox.TabIndex = 20;
-			this.filterComboBox.SelectedIndexChanged += new System.EventHandler(this.filterRadioBtn_CheckedChanged);
 			// 
 			// databaseForm
 			// 
