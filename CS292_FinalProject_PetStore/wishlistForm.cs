@@ -28,5 +28,14 @@ namespace CS292_FinalProject_PetStore
 			this.wishListTableAdapter.Fill(this.petInfoDataSet2.WishList);
 
 		}
-	}
+
+        //When clicked on, the button will delete the row that a cell has been selected in
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int row = wishlistGridView.CurrentCell.RowIndex;
+
+            wishlistGridView.Rows.RemoveAt(row);
+        }
+
+    }
 }
