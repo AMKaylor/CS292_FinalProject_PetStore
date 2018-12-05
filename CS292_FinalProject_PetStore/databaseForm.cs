@@ -146,6 +146,7 @@ namespace CS292_FinalProject_PetStore
                     }
                     counter++;
                 }
+                MessageBox.Show("You have added " + (counter-1) + " items to your wish list.");
             }
         }
     }
