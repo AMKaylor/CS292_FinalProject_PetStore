@@ -13,9 +13,11 @@ namespace CS292_FinalProject_PetStore
     public partial class databaseForm : Form
     {
         private readonly frmPetInc _frmPetInc;
-        public databaseForm(frmPetInc frmPetInc)
+        private readonly wishlistForm _wsForm;
+        public databaseForm(frmPetInc frmPetInc, wishlistForm wsForm)
         {
             _frmPetInc = frmPetInc;
+            _wsForm = wsForm;
             InitializeComponent();
             PopulateFilterDropdown();
 
@@ -47,15 +49,10 @@ namespace CS292_FinalProject_PetStore
         private void goToWishlistToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            showWishlistForm();
+            _wsForm.Show();
         }
 
         //opens the form to show the user the wishlist
-        private void showWishlistForm()
-        {
-            var ws = new wishlistForm();
-            ws.Show();
-        }
 
         //checks to see which button was clicked on the previous form, and sets visible filters and data accordingly
         private void PopulateFilterDropdown()
@@ -130,5 +127,23 @@ namespace CS292_FinalProject_PetStore
 				throw ex;
 			}
 		}
-	}
+
+        private void addToWSBtn_Click(object sender, EventArgs e)
+        {
+            int selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            if(selectedRowCount > 0)
+            {
+
+                for(int i = 0; i < selectedRowCount; i++)
+                {
+                    _wsForm.GetDataGridView().Rows.Add();
+                    for (int k = 0; k < dataGridView1.SelectedRows[i].Cells.Count; k++) {
+                        _wsForm.GetDataGridView().Rows[i].Cells[k].Value = dataGridView1.SelectedRows[i].Cells[k].Value;
+                    }
+                    
+                }
+            }
+        }
+    }
 }

@@ -17,6 +17,7 @@ namespace CS292_FinalProject_PetStore
 		public Boolean PetFoodButtonClicked { get; set; }
         public Boolean DogsCatsButtonClicked { get; set; }
         public Boolean MarineLifeButtonClicked { get; set; }
+        wishlistForm wsForm = new wishlistForm();
 
         public frmPetInc()
         {
@@ -31,7 +32,7 @@ namespace CS292_FinalProject_PetStore
 
         private void btnMenuWishlist_Click(object sender, EventArgs e)
         {
-            showWishlistForm();
+            wsForm.Show();
         }
 
         private void btnPetAccessories_Click(object sender, EventArgs e)
@@ -73,16 +74,10 @@ namespace CS292_FinalProject_PetStore
         //opens the form to show the database view
         private void showDBForm()
         {
-            var db = new databaseForm(this);
+            var db = new databaseForm(this, wsForm);
             db.Show();
         }
 
-        //opens the form to show the wishlist view
-        private void showWishlistForm()
-        {
-            var ws = new wishlistForm();
-            ws.Show();
-        }
 
         //public Boolean getPAButtonClicked()
         //{

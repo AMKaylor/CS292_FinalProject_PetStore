@@ -29,27 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wishlistGridView = new System.Windows.Forms.DataGridView();
+            this.wishListBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.petInfoDataSet21 = new CS292_FinalProject_PetStore.PetInfoDataSet2();
             this.wishListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.petInfoDataSet2 = new CS292_FinalProject_PetStore.PetInfoDataSet2();
             this.wishListTableAdapter = new CS292_FinalProject_PetStore.PetInfoDataSet2TableAdapters.WishListTableAdapter();
             this.btnDelete = new System.Windows.Forms.Button();
             this.wishListBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.petInfoDataSet21 = new CS292_FinalProject_PetStore.PetInfoDataSet2();
-            this.wishListBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descriptor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wishlistGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wishListBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petInfoDataSet21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.petInfoDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishListBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petInfoDataSet21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wishListBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,18 +72,26 @@
             // wishlistGridView
             // 
             this.wishlistGridView.AllowUserToOrderColumns = true;
-            this.wishlistGridView.AutoGenerateColumns = false;
             this.wishlistGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.wishlistGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productNameDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn});
-            this.wishlistGridView.DataSource = this.wishListBindingSource2;
+            this.ProductName,
+            this.Price,
+            this.Descriptor});
             this.wishlistGridView.Location = new System.Drawing.Point(12, 42);
             this.wishlistGridView.Name = "wishlistGridView";
             this.wishlistGridView.ReadOnly = true;
             this.wishlistGridView.Size = new System.Drawing.Size(637, 277);
             this.wishlistGridView.TabIndex = 1;
+            // 
+            // wishListBindingSource2
+            // 
+            this.wishListBindingSource2.DataMember = "WishList";
+            this.wishListBindingSource2.DataSource = this.petInfoDataSet21;
+            // 
+            // petInfoDataSet21
+            // 
+            this.petInfoDataSet21.DataSetName = "PetInfoDataSet2";
+            this.petInfoDataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // wishListBindingSource
             // 
@@ -102,7 +109,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(243, 328);
+            this.btnDelete.Location = new System.Drawing.Point(283, 327);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(125, 35);
             this.btnDelete.TabIndex = 2;
@@ -115,39 +122,26 @@
             this.wishListBindingSource1.DataMember = "WishList";
             this.wishListBindingSource1.DataSource = this.petInfoDataSet2;
             // 
-            // petInfoDataSet21
+            // ProductName
             // 
-            this.petInfoDataSet21.DataSetName = "PetInfoDataSet2";
-            this.petInfoDataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProductName.HeaderText = "Product Name";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
             // 
-            // wishListBindingSource2
+            // Price
             // 
-            this.wishListBindingSource2.DataMember = "WishList";
-            this.wishListBindingSource2.DataSource = this.petInfoDataSet21;
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
-            // productNameDataGridViewTextBoxColumn
+            // Descriptor
             // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Descriptor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descriptor.HeaderText = "Descriptor";
+            this.Descriptor.Name = "Descriptor";
+            this.Descriptor.ReadOnly = true;
             // 
             // wishlistForm
             // 
@@ -165,11 +159,11 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wishlistGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wishListBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petInfoDataSet21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.petInfoDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishListBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petInfoDataSet21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wishListBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,8 +181,9 @@
         private System.Windows.Forms.BindingSource wishListBindingSource1;
         private PetInfoDataSet2 petInfoDataSet21;
         private System.Windows.Forms.BindingSource wishListBindingSource2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descriptor;
     }
 }

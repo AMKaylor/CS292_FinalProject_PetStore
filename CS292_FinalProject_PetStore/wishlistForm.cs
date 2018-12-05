@@ -15,6 +15,7 @@ namespace CS292_FinalProject_PetStore
         public wishlistForm()
         {
             InitializeComponent();
+        
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,5 +40,10 @@ namespace CS292_FinalProject_PetStore
             wishlistGridView.Rows.RemoveAt(row);
         }
 
+        public DataGridView GetDataGridView()
+        {
+            return wishlistGridView;
+        }
+       
     }
 }
