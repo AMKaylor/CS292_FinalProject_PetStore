@@ -134,14 +134,17 @@ namespace CS292_FinalProject_PetStore
 
             if(selectedRowCount > 0)
             {
+                int counter = _wsForm.GetDataGridView().Rows.Count;
 
                 for(int i = 0; i < selectedRowCount; i++)
                 {
+                   
                     _wsForm.GetDataGridView().Rows.Add();
-                    for (int k = 0; k < dataGridView1.SelectedRows[i].Cells.Count; k++) {
-                        _wsForm.GetDataGridView().Rows[i].Cells[k].Value = dataGridView1.SelectedRows[i].Cells[k].Value;
-                    }
                     
+                    for (int k = 0; k < dataGridView1.SelectedRows[i].Cells.Count; k++) {
+                       _wsForm.GetDataGridView().Rows[counter-1].Cells[k].Value = dataGridView1.SelectedRows[i].Cells[k].Value;
+                    }
+                    counter++;
                 }
             }
         }
