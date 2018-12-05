@@ -75,7 +75,37 @@ SELECT Id, ProductName, ProductType, Price, Descriptor FROM StoreItems WHERE (Id
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT ProductName, Price, Descriptor 
 FROM dbo.StoreItems
-WHERE ProductType = 'Cat Collar'</CommandText>
+WHERE ProductType = 'Accessory'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PetInfoConnectionString (Settings)" DbObjectName="dbo.StoreItems" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDogsCats" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataDogsCats" GeneratorSourceName="FillDogsCats" GetMethodModifier="Public" GetMethodName="GetDataDogsCats" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataDogsCats" UserSourceName="FillDogsCats">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, ProductName, ProductType, Price, Descriptor 
+FROM dbo.StoreItems
+WHERE ProductType = 'Dogs &amp; Cats'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PetInfoConnectionString (Settings)" DbObjectName="dbo.StoreItems" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillMarineLife" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataMarineLife" GeneratorSourceName="FillMarineLife" GetMethodModifier="Public" GetMethodName="GetDataMarineLife" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataMarineLife" UserSourceName="FillMarineLife">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, ProductName, ProductType, Price, Descriptor 
+FROM dbo.StoreItems
+WHERE ProductType = 'Marine Life'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PetInfoConnectionString (Settings)" DbObjectName="dbo.StoreItems" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillPetFood" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataPetFood" GeneratorSourceName="FillPetFood" GetMethodModifier="Public" GetMethodName="GetDataPetFood" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataPetFood" UserSourceName="FillPetFood">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, ProductName, ProductType, Price, Descriptor 
+FROM dbo.StoreItems
+WHERE ProductType = 'Pet Food'</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -90,7 +120,7 @@ WHERE ProductType = 'Cat Collar'</CommandText>
   <xs:element name="PetInfoDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PetInfoDataSet1" msprop:Generator_UserDSName="PetInfoDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="StoreItems" msprop:Generator_TableClassName="StoreItemsDataTable" msprop:Generator_TableVarName="tableStoreItems" msprop:Generator_RowChangedName="StoreItemsRowChanged" msprop:Generator_TablePropName="StoreItems" msprop:Generator_RowDeletingName="StoreItemsRowDeleting" msprop:Generator_RowChangingName="StoreItemsRowChanging" msprop:Generator_RowEvHandlerName="StoreItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="StoreItemsRowDeleted" msprop:Generator_RowClassName="StoreItemsRow" msprop:Generator_UserTableName="StoreItems" msprop:Generator_RowEvArgName="StoreItemsRowChangeEvent">
+        <xs:element name="StoreItems" msprop:Generator_TableClassName="StoreItemsDataTable" msprop:Generator_TableVarName="tableStoreItems" msprop:Generator_TablePropName="StoreItems" msprop:Generator_RowDeletingName="StoreItemsRowDeleting" msprop:Generator_RowChangingName="StoreItemsRowChanging" msprop:Generator_RowEvHandlerName="StoreItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="StoreItemsRowDeleted" msprop:Generator_UserTableName="StoreItems" msprop:Generator_RowChangedName="StoreItemsRowChanged" msprop:Generator_RowEvArgName="StoreItemsRowChangeEvent" msprop:Generator_RowClassName="StoreItemsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />

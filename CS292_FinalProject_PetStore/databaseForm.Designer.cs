@@ -29,15 +29,11 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.goToWishlistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.productTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.descriptorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.storeItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.petInfoDataSet1 = new CS292_FinalProject_PetStore.PetInfoDataSet1();
 			this.petInfoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,6 +44,9 @@
 			this.descRadioBtn = new System.Windows.Forms.RadioButton();
 			this.ascRadioBtn = new System.Windows.Forms.RadioButton();
 			this.filterComboBox = new System.Windows.Forms.ComboBox();
+			this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.descriptorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.storeItemsBindingSource)).BeginInit();
@@ -90,7 +89,6 @@
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productNameDataGridViewTextBoxColumn,
-            this.productTypeDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
             this.descriptorDataGridViewTextBoxColumn});
 			this.dataGridView1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.storeItemsBindingSource, "ProductName", true));
@@ -98,35 +96,8 @@
 			this.dataGridView1.Location = new System.Drawing.Point(262, 43);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersWidth = 30;
-			this.dataGridView1.Size = new System.Drawing.Size(433, 222);
+			this.dataGridView1.Size = new System.Drawing.Size(429, 222);
 			this.dataGridView1.TabIndex = 5;
-			// 
-			// productNameDataGridViewTextBoxColumn
-			// 
-			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-			this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
-			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-			// 
-			// productTypeDataGridViewTextBoxColumn
-			// 
-			this.productTypeDataGridViewTextBoxColumn.DataPropertyName = "ProductType";
-			this.productTypeDataGridViewTextBoxColumn.HeaderText = "ProductType";
-			this.productTypeDataGridViewTextBoxColumn.Name = "productTypeDataGridViewTextBoxColumn";
-			// 
-			// priceDataGridViewTextBoxColumn
-			// 
-			this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-			dataGridViewCellStyle2.Format = "C2";
-			dataGridViewCellStyle2.NullValue = null;
-			this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-			this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-			this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-			// 
-			// descriptorDataGridViewTextBoxColumn
-			// 
-			this.descriptorDataGridViewTextBoxColumn.DataPropertyName = "Descriptor";
-			this.descriptorDataGridViewTextBoxColumn.HeaderText = "Descriptor";
-			this.descriptorDataGridViewTextBoxColumn.Name = "descriptorDataGridViewTextBoxColumn";
 			// 
 			// storeItemsBindingSource
 			// 
@@ -214,6 +185,30 @@
 			this.filterComboBox.Size = new System.Drawing.Size(121, 21);
 			this.filterComboBox.TabIndex = 20;
 			// 
+			// productNameDataGridViewTextBoxColumn
+			// 
+			this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+			this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+			this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+			this.productNameDataGridViewTextBoxColumn.Width = 150;
+			// 
+			// priceDataGridViewTextBoxColumn
+			// 
+			this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+			dataGridViewCellStyle1.Format = "C2";
+			dataGridViewCellStyle1.NullValue = null;
+			this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+			this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+			this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+			this.priceDataGridViewTextBoxColumn.Width = 60;
+			// 
+			// descriptorDataGridViewTextBoxColumn
+			// 
+			this.descriptorDataGridViewTextBoxColumn.DataPropertyName = "Descriptor";
+			this.descriptorDataGridViewTextBoxColumn.HeaderText = "Descriptor";
+			this.descriptorDataGridViewTextBoxColumn.Name = "descriptorDataGridViewTextBoxColumn";
+			this.descriptorDataGridViewTextBoxColumn.Width = 187;
+			// 
 			// databaseForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,13 +249,12 @@
 		private PetInfoDataSet1 petInfoDataSet1;
 		private System.Windows.Forms.BindingSource storeItemsBindingSource;
 		private PetInfoDataSet1TableAdapters.StoreItemsTableAdapter storeItemsTableAdapter;
-		private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn productTypeDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn descriptorDataGridViewTextBoxColumn;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.RadioButton descRadioBtn;
 		private System.Windows.Forms.RadioButton ascRadioBtn;
 		private System.Windows.Forms.ComboBox filterComboBox;
+		private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn descriptorDataGridViewTextBoxColumn;
 	}
 }

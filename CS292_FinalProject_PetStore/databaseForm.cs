@@ -18,7 +18,26 @@ namespace CS292_FinalProject_PetStore
             _frmPetInc = frmPetInc;
             InitializeComponent();
             PopulateFilterDropdown();
-        }
+
+			//Conditionally title the form based on which category was selected in the main form
+			if (_frmPetInc.PetAccessoriesButtonClicked)
+			{
+				this.Text = "Pet Accessories";
+			}
+			else if (_frmPetInc.PetFoodButtonClicked)
+			{
+				this.Text = "Pet Food";
+			}
+			else if (_frmPetInc.DogsCatsButtonClicked)
+			{
+				this.Text = "Dogs & Cats";
+			}
+			else
+			{
+				this.Text = "Marine Life";
+			}
+
+		}
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -46,8 +65,9 @@ namespace CS292_FinalProject_PetStore
 				filterComboBox.Items.Add(el.ColumnName);
 			}
 
-			//blacklist Id
+			//blacklist Id & ProductType because they cause issues
 			filterComboBox.Items.Remove("Id");
+			filterComboBox.Items.Remove("ProductType");
 
 			//set a default value to prevent users from trying to sort by nothing.
 			filterComboBox.SelectedIndex = 0;
@@ -56,7 +76,27 @@ namespace CS292_FinalProject_PetStore
 		private void databaseForm_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'petInfoDataSet1.StoreItems' table. You can move, or remove it, as needed.
-			this.storeItemsTableAdapter.Fill(this.petInfoDataSet1.StoreItems);
+			//this.storeItemsTableAdapter.Fill(this.petInfoDataSet1.StoreItems);
+			if (_frmPetInc.PetAccessoriesButtonClicked)
+			{
+				this.storeItemsTableAdapter.FillAccessories(this.petInfoDataSet1.StoreItems);
+				this.Text = "Pet Accessories";
+			}
+			else if (_frmPetInc.PetFoodButtonClicked)
+			{
+				this.storeItemsTableAdapter.FillPetFood(this.petInfoDataSet1.StoreItems);
+				this.Text = "Pet Food";
+			}
+			else if (_frmPetInc.DogsCatsButtonClicked)
+			{
+				this.storeItemsTableAdapter.FillDogsCats(this.petInfoDataSet1.StoreItems);
+				this.Text = "Dogs & Cats";
+			}
+			else
+			{
+				this.storeItemsTableAdapter.FillMarineLife(this.petInfoDataSet1.StoreItems);
+				this.Text = "Marine Life";
+			}
 		}
 
 		private DataGridViewColumn GetDataColumn(String name)
